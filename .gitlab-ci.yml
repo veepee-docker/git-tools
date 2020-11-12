@@ -7,16 +7,16 @@ stages:
 
 include:
   - project: veepee/vptech/sre/iac/ci-cd/markdown-lint
-    ref: 1.2.1
+    ref: 1.2.2
     file: gitlab-ci.yml
   - project: veepee/vptech/sre/iac/ci-cd/docker-lint
-    ref: 2.0.1
+    ref: 2.0.2
     file: gitlab-ci.yml
   - project: veepee/vptech/sre/iac/ci-cd/docker-build
-    ref: 4.3.0
+    ref: 4.3.3
     file: gitlab-ci-build.yml
   - project: veepee/vptech/sre/iac/ci-cd/semantic-release
-    ref: 2.10.0
+    ref: 3.2.1
     file: gitlab-ci.yml
 
 variables:
@@ -26,9 +26,9 @@ variables:
   PUBLIC: 'true'
   SEMANTIC_CONFIG_FILE: changelog
 
-public:1.0.0:
+public:1.1.0:
   extends: .publish-public:docker
   variables:
-    DOCKER_BUILD_ARGS: --build-arg GLAB_VERSION=1.8.0 --build-arg HUB_VERSION=2.14.2 --build-arg LAB_VERSION=0.17.2
-    TAG: 1.0.0
+    DOCKER_BUILD_ARGS: --build-arg GLAB_VERSION=1.11.1 --build-arg HUB_VERSION=2.14.2 --build-arg LAB_VERSION=0.17.2
+    TAG: 1.1.0
 ...

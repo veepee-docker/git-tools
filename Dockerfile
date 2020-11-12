@@ -14,7 +14,7 @@
 
 FROM golang:1.14-alpine AS build-glab
 
-ARG GLAB_VERSION="1.8.0"
+ARG GLAB_VERSION="1.11.1"
 
 RUN apk add --no-cache --quiet \
       build-base \

@@ -1,3 +1,18 @@
+# [1.1.0](https://git.vptech.eu/veepee/vptech/sre/iac/docker-images/git-tools/compare/1.0.0...1.1.0) (2020-11-12)
+
+
+### Chores
+
+* **deps:** update dependency veepee/vptech/sre/iac/ci-cd/docker-build to v4.2.3 ([ec88755](https://git.vptech.eu/veepee/vptech/sre/iac/docker-images/git-tools/commit/ec8875566f51244af4c088bd9d8fe48864d53749))
+* **deps:** update dependency veepee/vptech/sre/iac/ci-cd/docker-build to v4.3.0 ([f930983](https://git.vptech.eu/veepee/vptech/sre/iac/docker-images/git-tools/commit/f9309831f11608799db205f760f1f0206b7d2b09))
+* **deps:** update dependency veepee/vptech/sre/iac/ci-cd/docker-lint to v2.0.1 ([ce292be](https://git.vptech.eu/veepee/vptech/sre/iac/docker-images/git-tools/commit/ce292becacac1793d45a123e344a8566351e9070))
+* **deps:** update dependency veepee/vptech/sre/iac/ci-cd/markdown-lint to v1.2.1 ([173e1e4](https://git.vptech.eu/veepee/vptech/sre/iac/docker-images/git-tools/commit/173e1e46fc7967762981c4f12f37225c2f1f51cd))
+
+
+### Features
+
+* upgrade glab to version to 1.11.1 ([11c6544](https://git.vptech.eu/veepee/vptech/sre/iac/docker-images/git-tools/commit/11c654471514c120261bed9a9b86ac17760d8795))
+
 # 1.0.0 (2020-08-10)
 
 

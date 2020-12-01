@@ -12,7 +12,7 @@
 # OTHER  TORTIOUS ACTION,  ARISING OUT  OF  OR IN  CONNECTION WITH  THE USE  OR
 # PERFORMANCE OF THIS SOFTWARE.
 
-FROM golang:1.14-alpine AS build-glab
+FROM golang:1.15-alpine AS build-glab
 
 ARG GLAB_VERSION="1.11.1"
 
@@ -29,7 +29,7 @@ RUN mkdir -p /go/src/github.com/profclems && \
     git checkout v${GLAB_VERSION} && \
     make
 
-FROM golang:1.14-alpine AS build-hub
+FROM golang:1.15-alpine AS build-hub
 
 ARG HUB_VERSION="2.14.2"
 
@@ -47,7 +47,7 @@ RUN mkdir -p /go/src/github.com/github && \
     git checkout v${HUB_VERSION} && \
     make
 
-FROM golang:1.14-alpine AS build-lab
+FROM golang:1.15-alpine AS build-lab
 
 ARG LAB_VERSION="0.17.2"
 

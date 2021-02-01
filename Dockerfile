@@ -64,7 +64,7 @@ RUN mkdir -p /go/src/github.com/zaquestion && \
     git checkout v${LAB_VERSION} && \
     make
 
-FROM alpine:3.12
+FROM alpine:3.13
 
 RUN apk add --no-cache --quiet \
       git \

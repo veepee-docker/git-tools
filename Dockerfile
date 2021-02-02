@@ -12,23 +12,6 @@
 # OTHER  TORTIOUS ACTION,  ARISING OUT  OF  OR IN  CONNECTION WITH  THE USE  OR
 # PERFORMANCE OF THIS SOFTWARE.
 
-FROM golang:1.15-alpine AS build-glab
-
-ARG GLAB_VERSION="1.12.1"
-
-RUN apk add --no-cache --quiet \
-      build-base \
-      ca-certificates \
-      git \
-      make
-
-RUN mkdir -p /go/src/github.com/profclems && \
-    cd /go/src/github.com/profclems && \
-    git clone https://github.com/profclems/glab.git && \
-    cd /go/src/github.com/profclems/glab && \
-    git checkout v${GLAB_VERSION} && \
-    make
-
 FROM golang:1.15-alpine AS build-hub
 
 ARG HUB_VERSION="2.14.2"
@@ -66,12 +49,12 @@ RUN mkdir -p /go/src/github.com/zaquestion && \
 
 FROM alpine:3.13
 
+RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+
 RUN apk add --no-cache --quiet \
       git \
-      openssh-client
-
-COPY --from=build-glab /go/src/github.com/profclems/glab/bin/glab \
-                       /usr/bin/glab
+      openssh-client \
+      glab@edge
 
 COPY --from=build-hub  /go/src/github.com/github/hub/bin/hub \
                        /usr/bin/hub

@@ -12,7 +12,7 @@
 # OTHER  TORTIOUS ACTION,  ARISING OUT  OF  OR IN  CONNECTION WITH  THE USE  OR
 # PERFORMANCE OF THIS SOFTWARE.
 
-FROM golang:1.16-alpine AS build-glab
+FROM docker.registry.vptech.eu/golang:1.16.5-alpine AS build-glab
 
 ARG GLAB_VERSION="1.12.1"
 
@@ -29,7 +29,7 @@ RUN mkdir -p /go/src/github.com/profclems && \
     git checkout v${GLAB_VERSION} && \
     make
 
-FROM golang:1.16-alpine AS build-hub
+FROM docker.registry.vptech.eu/golang:1.16.5-alpine AS build-hub
 
 ARG HUB_VERSION="2.14.2"
 
@@ -47,7 +47,7 @@ RUN mkdir -p /go/src/github.com/github && \
     git checkout v${HUB_VERSION} && \
     make
 
-FROM golang:1.16-alpine AS build-lab
+FROM docker.registry.vptech.eu/golang:1.16.5-alpine AS build-lab
 
 ARG LAB_VERSION="0.17.2"
 
@@ -64,7 +64,7 @@ RUN mkdir -p /go/src/github.com/zaquestion && \
     git checkout v${LAB_VERSION} && \
     make
 
-FROM alpine:3.13
+FROM docker.registry.vptech.eu/alpine:3.14.0
 
 RUN apk add --no-cache --quiet \
       git \
